@@ -1,0 +1,553 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Body & Sections */
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  font-family: Arial, sans-serif;
+}
+
+
+section {
+  padding: 60px 20px;
+}
+h1, h2 {
+  margin: 0 0 20px 0;
+}
+
+/* Header */
+header {
+  background: #1E3A8A; /* deep blue */
+  color: #fff;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80vh;
+  background: url('images/hero-bg.jpg') no-repeat center center/cover;
+  color: #1473e0ff;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #FBBF24;
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05) translateY(-3px);
+  background: #F59E0B;
+}
+
+/* About Section */
+.about {
+  padding: 40px 20px;
+  text-align: center;
+  background: #1E3A8A;
+   color: #ffffff;
+}
+
+/* Footer */
+footer {
+  height: 100px;
+  padding: 10px 20px;
+  text-align: center;
+  background: #1E3A8A;
+  color: #ffffff;
+}
+
+footer .social {
+  margin-top: 15px;
+}
+
+footer .social img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s;
+}
+
+/* Academics Section */
+#academics {
+  padding: 50px 20px;
+  background: #f9f9f967;
+  text-align: center;
+}
+
+#academics h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #1E3A8A;
+}
+
+.academics-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.academic-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: left;
+}
+
+.academic-card h3 {
+  color: #2563EB;
+  margin-bottom: 15px;
+}
+
+.academic-card p {
+  line-height: 1.6;
+}
+
+/* Learn More Button for Academy & vocational*/
+.btn-learn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #2563EB;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn-learn:hover {
+  background: #1E40AF;
+}
+
+
+/* Gallery Section */
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Contact Section */
+.contact {
+  height: 150px;
+  padding: 30px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+.contact h2 {
+  margin-bottom: 15px;
+}
+.contact p {
+  margin: 5px 0;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background: #004080;
+    position: absolute;
+    top: 60px;
+    left: -100%; /* hide menu initially */
+    width: 100%;
+    transition: left 0.3s ease;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+}
+
+/* Hide menu toggle on large screens */
+.menu-toggle {
+  display: none;
+}
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #1E3A8A;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: none;
+}
+.back-to-top {
+  transition: all 0.3s ease;
+}
+.back-to-top:hover {
+  background: #374AC0;
+}
+
+/* Show button when scrolling */
+body.scrolled .back-to-top {
+  display: block;
+  transform: translateY(0);
+}
+/* Responsive Navigation */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background: #1E3A8A;
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    transition: left 0.3s ease;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+/* Sections */
+  section {
+    padding: 40px 15px;
+  }
+
+  /* Hero */
+  .hero {
+    height: 60vh;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    gap: 10px;
+  }
+ /* Sections */
+  section {
+    padding: 30px 10px;
+  }
+
+  /* Hero */
+  .hero {
+    height: 50vh;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+  /* Hidden by default */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Show when scrolled into view */
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+.about, .academics, .gallery, .contact {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about p, .contact p {
+  font-size: 1.1rem;
+}
+
+/* Founder Section */
+#founder {
+  padding: 50px 20px;
+  background: #f9f9f9;
+}
+
+
+.founder-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* makes it stack on small screens */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.founder-img {
+  width: 120px;      /* much smaller */
+  height: auto;      /* keeps proportions */
+  border-radius: 8px; /* optional */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.founder-text {
+  flex: 1;
+  min-width: 280px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.banner-header {
+  width: 100%;
+  text-align: center;  /* centers the image */
+  margin: 0;
+  padding: 10px 0;     /* adds space above and below */
+  background: #fff;    /* optional: background color */
+}
+/* Banner Styling */
+.banner-img {
+  width: 100%;       /* stretches full width */
+  height: 250px;     /* adjust this number as you like */
+  object-fit: cover; /* crops to fit the box nicely */
+  display: block;    /* removes small gaps */
+}
+
+/* Staff Section */
+#staff {
+  padding: 50px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.staff-card {
+  background: #f1f5f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+}
+
+.staff-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+/* Intro Section */
+.intro {
+  padding: 40px 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+/* Staff Section */
+.staff {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.staff-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.staff-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 250px;
+  text-align: left;
+}
+.staff-card h3 {
+  color: #1E3A8A;
+  margin-bottom: 10px;
+}
+
+/* Department Buttons */
+.dept-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-dept {
+  padding: 12px 25px;
+  background: #2563EB;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-dept:hover {
+  background: #1E40AF;
+}
+
+.dept-header {
+  text-align: center;
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.intro, .skills, .gallery {
+  margin: 20px auto;
+  width: 80%;
+  padding: 15px;
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+.skills ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.gallery-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.gallery-container img, .gallery-container video {
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.back-btn {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.back-btn:hover {
+  background: #1abc9c;
+}
+
+/* Website background and border */
+body {
+  background: url("logo.jpg") no-repeat center center fixed;
+  background-size: cover;
+  border: 5px solid black;
+  margin: 0;
+  padding: 0;
+}
